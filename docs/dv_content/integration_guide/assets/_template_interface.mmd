@@ -1,0 +1,55 @@
+# \<Interface\>
+
+## Parameters
+
+This section lists the parameter types needed for instantiation of this interface
+
+[!../assets/_template_table_parameters.mmd]
+
+## Signals
+
+Table: Interface Signal List
+
+[!../assets/_template_table_interface_signal_list.mmd]
+
+Table: Modport Assignment Legend
+
+| Legend | Description | 
+| -      | ------- | 
+| I | Input | 
+| O | Output | 
+| T | Inout | 
+| - | Not present in modport | 
+
+## Definitions (optional, if there are typedefs, or structs)
+
+### \<Typedef\>
+
+<!--
+Struct definitions should only be defined in the interface mmd file if they are actually used locally, for eg an output port is a struct. 
+Most likely, any struct is going to be a reuse definition eg axi failure, in which case, link to the appropriate reused item
+-->
+
+[!../assets/_template_table_typedef.mmd]
+
+### \<Struct\>
+
+<!--
+Struct definitions should only be defined in the interface mmd file if they are actually used locally, for eg an output port is a struct. 
+Most likely, any struct is going to be a reuse definition eg axi failure, in which case, link to the appropriate reused item
+-->
+
+[!../assets/_template_struct_sample.mmd]
+
+## Transactions 
+
+### \<Transaction\> 
+
+#### Timing Diagrams
+
+Every interface transaction should have an associated timing diagram
+
+<!---
+Promark wavedrom type diagrams are recommended 
+-- >
+

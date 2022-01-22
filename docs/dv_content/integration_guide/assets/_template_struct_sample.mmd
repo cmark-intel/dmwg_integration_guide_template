@@ -1,0 +1,35 @@
+
+<!--
+For complete syntax options, refer to the promark documentation for 
+"struct type def style packets"
+
+https://docs.intel.com/documents/promark/Documentation/Example.html#struct-typedef-style-packets
+-->
+
+```struct("template_sample_struct_t", 32) 
+
+== 16 | field1 
+
+**Field 1**  
+
+Description
+
+== 2 | field2_type
+
+**Field 2 Type**  
+
+Description 
+= 00b | a
+= 01b | b
+= 10b | c
+= 11b | d
+
+==  128 | field3_bullet
+
+**Field 3 Bullet** 
+
+Description
+
+* bullet content 
+
+```

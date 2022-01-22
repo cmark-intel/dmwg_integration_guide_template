@@ -1,0 +1,80 @@
+# \<IP NAME\>
+
+This section describes the dependencies, parameters, and interface of the IP.
+
+## Dependencies
+
+This section lists the dependencies of the IP that are visible to the customer. Some of the content in the section could be reused from the HAS.
+
+### Mandatory
+
+* mandatory IP dependencies (eg phys)
+* shared libraries 
+* external standards eg AXI versions
+
+### Customizable
+
+IP dependencies that may be sourced by the customer
+
+* cells
+* SRAMS
+* PLLs
+* etc
+
+## Parameters
+
+<!---
+This section should be imported from the HAS Document content. It should list only customer controllable parameters
+-->
+
+ Parameter | Description | Permitted Values |
+| --------- | ------------------------------------ | -- | 
+|\<PARAMETER_NAME\>  | Description here | Permitted values listed here | 
+
+## Ports
+
+This section details the ports of the IP 
+
+### Ports List
+
+<!--
+The list of ports can be either in one big table, or optionally grouped into subheadings, whichever is easier. 
+-->
+
+[!../assets/_template_table_module_signal_list.mmd]
+
+#### \<Ports Sub Grouping (optional)\>
+
+[!../assets/_template_table_module_signal_list.mmd]
+
+### Port Definitions
+
+These sections should all be imported from the MAS document
+<!---
+Interface Type Definitions
+This section should be imported from the MAS Document content
+-->
+
+[../assets/_template_interface.mmd]
+
+#### \<Signal Definition (optional) \>
+
+Most signals will not need a separate section. The content should be able to be contained in the description in [Ports]. If there are relationships between the signals, consider using an interface. 
+
+#### \<Struct Definition\>
+
+[!../assets/_template_struct_sample.mmd]
+
+#### \<Extended Interface Instance Description (optional) \>
+
+<!---
+This section should be imported from the MAS Document content
+-->
+
+Optional, only if this instance of the interface type has a special definition or behaviour beyond what is described by the interface type, and there is not sufficient space in the interface table. 
+
+## Block Diagram 
+
+<!-- 
+This diagram should be imported from the HAS document 
+-->

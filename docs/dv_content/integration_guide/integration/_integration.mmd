@@ -1,0 +1,140 @@
+# Physical Integration
+
+[../env/_design_env.mmd]
+
+## Clock
+
+Complete clock tree specifications are available in the configuration files of [Clock] section 
+
+Clock tree bringup sequences are described in the programmers guide Documentation
+
+### Clocks 
+
+Table: \<IP\> Clock Summary 
+
+| Clock | Frequency | Description  | 
+| ---   | ---       | ------       | 
+| clk   | 900 MHz   | System Clock | 
+
+### Clock Topology 
+
+Diagram of clock topology here. Diagram should show 
+
+* clock domains
+* clock gates  
+* layout domains if applicable
+
+### Clock Timing (opt)
+
+Details of clock generation if the clock is generated within the design
+
+## Reset
+
+Complete reset details are available in the configuration files of [Clock] section 
+
+Reset sequences are described in the Programmer's Guide Documentation 
+
+### Resets 
+
+Table: \<IP\> Reset Summary 
+
+| Reset  | Clock | Description  | 
+| ---    | ---   | ------       | 
+| rst_n  | clk   | System Reset | 
+
+### Reset Topology 
+
+Diagram of reset topology here
+
+### Reset Timing 
+
+Diagram of reset timing here
+
+## Power 
+
+This section provides an summary of power information to aid IP integration. 
+
+Complete Power Domain specifications are described in the configuration files of [Power]
+
+Power up / down sequences are described in the Programmer's Guide Documentation
+
+### Power Domains
+
+Table: \<IP\> Power Domain Summary 
+
+| Power Domain  | Description                    | 
+| ---           | ------                         | 
+| pwr           | Sole power domain in the sytem | 
+
+
+### Power Domain Topology
+
+Diagram of power topology here if there are multiple power domains. Diagram should show 
+
+* Power domains
+* layout domains if applicable
+
+### Power Modes  
+
+Table : \<IP\> Power Mode Overview
+
+| Mode | Description    | 
+| -----| -------------- | 
+
+### Power Estimates
+
+This section provides sample power consumption estimates for a variety of scenarios.
+
+Table: Power Estimates 
+
+| Scenario            | Workload | Consumption  | 
+| --------            | ------   | ----------   | 
+| 2 channels          | 50%      | 1 W          | 
+
+
+## Layout 
+
+### Macros
+
+Diagram of Layout Macros & Tiling Options
+
+### Layout Considerations 
+
+## Memory 
+
+This section contains a summary of the SRAMs contained in the IP to aid layout considerations. 
+
+For information on memory programming an initialization, please refer to the [Programmers Guide]
+
+### Memory Summary
+
+| SRAM       | Layout Macro | Dimensions <br> (bit width x rows ) | 
+| --------   | --------     | -----                               | 
+| sram_name  | layout_macro | 40 x 256                            | 
+
+## Scan 
+
+Placeholder
+
+### Sample Synthesis Results
+
+This section provides a summary of the results from a sample synthesis run. 
+
+For a complete log, please refer to the [Synthesis Tool] section 
+
+#### Sample Configuration
+
+| Parameter | Value |
+| ---        | ----   |
+| \<PARAMETER\> | \<VALUE\> |
+
+| Variable     | Value | 
+| ------------ | ---- | 
+| Cell Library | 24nm    | 
+| Frequency    | 1000 Hz |
+
+#### Results 
+
+| Result | Value | 
+| ----  | ---- | 
+| Gate Count | xxxx |
