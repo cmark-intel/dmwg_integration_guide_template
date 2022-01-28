@@ -2,54 +2,6 @@
 
 [../env/_design_env.mmd]
 
-## Clock
-
-Complete clock tree specifications are available in the configuration files of [Clock] section 
-
-Clock tree bringup sequences are described in the programmers guide Documentation
-
-### Clocks 
-
-Table: \<IP\> Clock Summary 
-
-| Clock | Frequency | Description  | 
-| ---   | ---       | ------       | 
-| clk   | 900 MHz   | System Clock | 
-
-### Clock Topology 
-
-Diagram of clock topology here. Diagram should show 
-
-* clock domains
-* clock gates  
-* layout domains if applicable
-
-### Clock Timing (opt)
-
-Details of clock generation if the clock is generated within the design
-
-## Reset
-
-Complete reset details are available in the configuration files of [Clock] section 
-
-Reset sequences are described in the Programmer's Guide Documentation 
-
-### Resets 
-
-Table: \<IP\> Reset Summary 
-
-| Reset  | Clock | Description  | 
-| ---    | ---   | ------       | 
-| rst_n  | clk   | System Reset | 
-
-### Reset Topology 
-
-Diagram of reset topology here
-
-### Reset Timing 
-
-Diagram of reset timing here
-
 ## Power 
 
 This section provides an summary of power information to aid IP integration. 
@@ -81,6 +33,12 @@ Table : \<IP\> Power Mode Overview
 | Mode | Description    | 
 | -----| -------------- | 
 
+### Power Sequences
+
+\<This section may not be applicable within the integration guide. If there are multiple power domains and one must be powered up before the other during a boot sequence, that should be described here\>
+
+Power up and down sequences during operation are described further within the Programmer's Guide document 
+
 ### Power Estimates
 
 This section provides sample power consumption estimates for a variety of scenarios.
@@ -91,6 +49,85 @@ Table: Power Estimates
 | --------            | ------   | ----------   | 
 | 2 channels          | 50%      | 1 W          | 
 
+## Clock
+
+Complete clock tree specifications are available in the configuration files of [Clock] section 
+
+Clock tree bringup sequences are described in the programmers guide Documentation
+
+### Clocks 
+
+Table: \<IP\> Clock Summary 
+
+| Clock | Frequency | Description  | 
+| ---   | ---       | ------       | 
+| clk   | 900 MHz   | System Clock |    
+| scan_clk   | 900 MHz   | System Clock |    
+
+### Clock Topology 
+
+Diagram of clock topology here. Diagram should show 
+
+* clock domains
+* clock gates  
+* layout domains if applicable
+* scan clock
+
+### Clock Timing (opt)
+
+Details of clock generation if the clock is generated within the design
+
+## Reset
+
+Complete reset signal details are available in the configuration files of [Clock] section 
+
+### Resets 
+
+Table: \<IP\> Reset Summary 
+
+| Reset  | Clock | Description  | 
+| ---    | ---   | ------       | 
+| rst_n  | clk   | System Reset | 
+
+### Reset Topology 
+
+Diagram of reset topology here
+
+### Reset Types
+
+This IP has the following reset types 
+
+<!-- Remove any reset types from the table that do not apply -->
+
+Table: Reset Types
+
+| Reset Type | Description | 
+| ---        | --------    |  
+| Cold Reset | Power on Reset; Triggered by the external resets | 
+| Warm Reset | Reset the CPU cores only | 
+| System Soft Resets | Reset the logic to the default state | 
+
+
+### Reset Sequences
+
+The Cold Reset sequence and requirements are described in [Cold Reset]. 
+
+Other reset sequences are described in the Programmers Guide
+
+
+#### Cold Reset
+
+Prerequisites
+
+* All input clocks must be stable before releasing a reset 
+* All inputs must be stable (value driven or inputs strapped)
+* IP is powered up
+
+Sequence 
+
+* \<Sequence goes here\>
+* \<If multiple reset domains, describe the required relationship between them\>
+* Timing Diagram may be included if helpful
 
 ## Layout 
 
@@ -99,6 +136,18 @@ Table: Power Estimates
 Diagram of Layout Macros & Tiling Options
 
 ### Layout Considerations 
+
+### Timing Considerations 
+
+<!-- 
+Add any general timing considerations that should be communicated to the customer.
+-->
+
+Complete details of the timing path configuration are described in the synthesis constraints files `link here`. 
+
+<!-- 
+Add details about any notable multicycle paths and or false paths from the synthesis, especially if they are particularly out of the ordinary. 
+-->
 
 ## Memory 
 
@@ -112,17 +161,35 @@ For information on memory programming an initialization, please refer to the [Pr
 | --------   | --------     | -----                               | 
 | sram_name  | layout_macro | 40 x 256                            | 
 
-## Scan 
+## Design for Test (DFT) 
 
-Placeholder
+### Scan Mode Configuration
 
-### Sample Synthesis Results
+Please refer to the description of the following pin(s) to enable scan mode
+
+* Test mode selection pin(s) (link back to the table)
+
+Add a link to the clock section for any scan clock routing details eg scan clock description or bypass of any clock mux or clock divider
+
+### DFT
+
+### MBIST
+
+### JTAG
+
+### Other Test Modes
+
+<!-- 
+May need to add references for test modes if there is embedded IP
+-->
+
+## Sample Synthesis Results
 
 This section provides a summary of the results from a sample synthesis run. 
 
 For a complete log, please refer to the [Synthesis Tool] section 
 
-#### Sample Configuration
+### Sample Configuration
 
 | Parameter | Value |
 | ---        | ----   |
@@ -133,7 +200,7 @@ For a complete log, please refer to the [Synthesis Tool] section
 | Cell Library | 24nm    | 
 | Frequency    | 1000 Hz |
 
-#### Results 
+### Results 
 
 | Result | Value | 
 | ----  | ---- | 
