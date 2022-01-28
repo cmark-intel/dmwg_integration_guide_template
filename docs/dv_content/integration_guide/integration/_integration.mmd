@@ -30,9 +30,7 @@ Details of clock generation if the clock is generated within the design
 
 ## Reset
 
-Complete reset details are available in the configuration files of [Clock] section 
-
-Reset sequences are described in the Programmer's Guide Documentation 
+Complete reset signal details are available in the configuration files of [Clock] section 
 
 ### Resets 
 
@@ -46,9 +44,35 @@ Table: \<IP\> Reset Summary
 
 Diagram of reset topology here
 
-### Reset Timing 
+### Reset Sequences
 
-Diagram of reset timing here
+This IP has the following reset types 
+
+<!-- Remove any reset types from the table that do not apply -->
+
+Table: Reset Types
+
+| Reset Type | Description | 
+| ---        | --------    |  
+| Cold Reset | Power on Reset; Triggered by the external resets | 
+| Warm Reset | Reset the CPU cores only | 
+| System Soft Resets | Reset the logic to the default state | 
+
+The Cold Reset sequence and requirements are described in [Cold Reset]. 
+
+Other reset sequences are described in the Programmers Guide
+
+### Cold Reset
+
+Prerequisites
+
+* All input clocks must be stable before releasing a reset 
+* All inputs must be stable (value driven or inputs strapped)
+
+Sequence 
+
+* \<Sequence goes here\>
+* Timing Diagram may be included if helpful
 
 ## Power 
 
@@ -100,6 +124,18 @@ Diagram of Layout Macros & Tiling Options
 
 ### Layout Considerations 
 
+### Timing Considerations 
+
+<!-- 
+Add any general timing considerations that should be communicated to the customer.
+-->
+
+Complete details of the timing path configuration are described in the synthesis constraints files `link here`. 
+
+<!-- 
+Add details about any notable multicycle paths and or false paths from the synthesis, especially if they are particularly out of the ordinary. 
+-->
+
 ## Memory 
 
 This section contains a summary of the SRAMs contained in the IP to aid layout considerations. 
@@ -112,17 +148,30 @@ For information on memory programming an initialization, please refer to the [Pr
 | --------   | --------     | -----                               | 
 | sram_name  | layout_macro | 40 x 256                            | 
 
-## Scan 
+## Design for Test (DFT) 
 
-Placeholder
+### Scan Mode Configuration
 
-### Sample Synthesis Results
+Scan mode pin pull up/down configuration 
+
+### DFT
+
+### MBIST
+
+### Other Test Modes
+
+<!-- 
+May need to add references for test modes if there is embedded IP
+-->
+
+
+## Sample Synthesis Results
 
 This section provides a summary of the results from a sample synthesis run. 
 
 For a complete log, please refer to the [Synthesis Tool] section 
 
-#### Sample Configuration
+### Sample Configuration
 
 | Parameter | Value |
 | ---        | ----   |
@@ -133,7 +182,7 @@ For a complete log, please refer to the [Synthesis Tool] section
 | Cell Library | 24nm    | 
 | Frequency    | 1000 Hz |
 
-#### Results 
+### Results 
 
 | Result | Value | 
 | ----  | ---- | 
