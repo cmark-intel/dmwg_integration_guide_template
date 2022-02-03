@@ -14,28 +14,82 @@ Discuss any global configuration/environment variables that the integrator needs
 
 List any libraries (e.g. for HIP) included 
 
-## Supported Tools
-
-Simple list of tools that are supported by this IP for a variety of flows. Specific versions can be listed in the release notes.
-Example:
-
-* VCS
-* UVM
-* Nebulon
-* Design Compiler
-* Spyglass
-
-etc.
-
 ## Flow-Specific Information
 
 Provide details on tool execution particular to a flow (like simulation or synthesis) in these subsections. For each flow, give overview of directory structure – README/further documentation, run location, location of key scripts, testbench, any other key information/potential pitfalls etc. If there are files that are expected to modified/customized by integrator, highlight these
 
 ### Synthesis
 
+#### Supported Tools
+
+Specific versions can be listed in the release notes.
+
+* Design Compiler
+* Fusion Compiler
+
+etc.
+
+#### Directory Structure
+
+#### Key Collateral
+
+Example for synthesis:
+
+Table: Synthesis Collateral
+
+| Purpose | Filename(s) |
+| -------  | ----- |
+| Clock stamping | collateral/timing_nominal/mcc_dut_clocks.tcl |
+| MCOs | collateral/timing_common/mcc_dut_manual_exceptions.tcl |
+| Set voltage	| dp/inputs/mcc_dut_set_voltage.tcl |
+| IO constriants |	dp/inputs/mcc_dut_io_constraints.tcl | 
+| IP level FP boundary/ pins | dp/inputs/mcc_dut_td_fp.tcl , mcc_dut.pspec |
+| Partition level FP files | dp/inputs/par*.boundary.tcl , par*.pspec , par*.placement.tcl |
+
+#### Notes
+ 
 ### Lint
 
+#### Supported Tools
+
+Specific versions can be listed in the release notes.
+
+* Spyglass
+
+#### Directory Structure
+
+#### Key Collateral
+
+#### Notes
+ 
 ### Simulation
 
+#### Supported Tools
+
+Specific versions can be listed in the release notes.
+
+* VCS
+* UVM
+
+#### Directory Structure
+
+#### Key Collateral
+
+#### Notes
+ 
 ### Formal Property Verification
+
+#### Supported Tools
+
+* JasperGold
+
+#### Directory Structure
+
+#### Key Collateral
+
+#### Notes
+ 
+### CDC
+
+### Power Estimation
 
