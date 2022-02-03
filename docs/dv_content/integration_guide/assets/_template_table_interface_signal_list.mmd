@@ -6,3 +6,12 @@
 | sample_parameter_signal     | 4                       | wire   | AON       | I              | O              | description | 
 | sample_struct_entry         | link_to_struct_def      | struct | AON       | O              | I              | description | 
 | sample_typedef_entry        | link_to_typedef         | typedef| AON       | -              | I              | description | 
+
+Table: Isolation Mode Value Legend
+
+| Legend | Description | 
+| -      | ------- | 
+| AON | Always On (No power Isolation) | 
+| 0 | Clamp to 0 when Isolated | 
+| 1 | Clamp to 1 when Isolated | 
+| X | Floating when Isolated | 
