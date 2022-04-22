@@ -6,6 +6,8 @@ This section provides information about the framework and goals of the verificat
 
 Provide an overview of the simulation environment and included BFMs, models and other simulation collateral.  Include a description of components and supported functional checks and monitors for protocol checking.
 
+List 3rd party VIP used in the environment
+
 ### Simulator Setup
 
 Provide an outline of the filelists and simulation collateral.  List and describe environment variables, compiler directives and simulation specific configurations.
@@ -14,8 +16,13 @@ Provide an outline of the filelists and simulation collateral.  List and describ
 
 Include important bringup configuration, reset, initialization sequences and test descriptions.
 
-<!--
+A 'basic_verif' testsuite is recommended to demonstrate basic functionality and key features.  Example tests or sequences may include the following,
+* Basic read/write register access 
+* Demonstration of all ports being driven
+* Basic sanity checking
+* Sequences exercising key features with waveforms for illustration
 
+<!--
 Content available in other 3rd party documents are 
 
 Bring up Environment Diagram
@@ -26,22 +33,12 @@ Important Bring Up Sequences (presumably can reference from Programmer's Guide)
 Description of a bring up test
 -->
 
+<!--
 ## Emulation 
 
 Reference the [Simulation](#Simulation) template above.
 
-<!--
-Reference the Simulation section above as available
-
-Content available in other 3rd party documents are 
-
-Bring up Environment Diagram
-Available BFMs
-Models
-HW Configuration/Initialization
-Important Bring Up Sequences (presumably can reference from Programmer's Guide)
-Description of a bring up test
-
-There may be some description of what was needed to run the emulation on a sample emulation platform?
+[VMWG comment (3/15/2022)]
+•	Emulation section not needed, do not expect to supply/support specific emulation collateral (especially if customer is using a different platform)
 
 -->
